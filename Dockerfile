@@ -1,4 +1,5 @@
-FROM ubuntu:latest
-LABEL authors="oiiva"
 
-ENTRYPOINT ["top", "-b"]
+FROM openjdk:21
+WORKDIR /app
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "Aikido.jar"]
